@@ -162,6 +162,9 @@ public class Main {
 
 //    TODO: showBooksOnHand
     private static void showBooksOnHand() {
+        System.out.println("Books that you have are:");
+        int i = 1;
+        for (Book b : currentUser.get)
     }
 
 //    TODO: returnBook()

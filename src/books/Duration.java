@@ -1,14 +1,21 @@
 package books;
 
+import java.util.Date;
+
 public class Duration {
 
-    private long start;
-    private long end;
+    private Date start;
+    private Date end;
 
 //    TODO: Duration constructor
 
-//    TODO: calculateDuration
+    public Duration() {
+        this.start = new Date();
+    }
+
+    //    TODO: calculateDuration
     public long calculateDuration() {
+        long duration = new Date
         return 0L;
     }
 }

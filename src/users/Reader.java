@@ -23,7 +23,10 @@ public class Reader extends User{
     }
 
     //    TODO: +rentBook(Book): void
-
+    public void rentBook(Book book) {
+        card.addBook(book);
+        booksOnHand.add(book);
+    }
 //    TODO: +returnBook(Book): void
 
     public boolean check(String login, String password) {
