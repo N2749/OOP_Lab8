@@ -86,29 +86,31 @@ public class Main {
 
     }
 
-    //    TODO: -showAllBooks
     private static void showAllBooks() {
-        int i=1;
+        int i = 1;
         System.out.println("______Available books______");
-        for (Map.Entry<Book, Boolean> shows: library.entrySet()){
-            if (shows.getValue()==true){
+        for (Map.Entry<Book, Boolean> shows : library.entrySet()) {
+            if (shows.getValue() == true) {
                 System.out.println("");
-                System.out.print((i++)+") ");shows.getKey().shortShow();System.out.println("\n");
+                System.out.print((i++) + ") ");
+                shows.getKey().shortShow();
+                System.out.println("\n");
             }
         }
         System.out.println("______Not Available books______");
-        for (Map.Entry<Book, Boolean> shows: library.entrySet()){
-            if (shows.getValue()==false){
+        for (Map.Entry<Book, Boolean> shows : library.entrySet()) {
+            if (shows.getValue() == false) {
                 System.out.println("");
-                System.out.print((i++)+") ");shows.getKey().shortShow();System.out.println("\n");
+                System.out.print((i++) + ") ");
+                shows.getKey().shortShow();
+                System.out.println("\n");
             }
         }
     }
 
-    //    TODO: -deleteAllBooks
     private static void deleteAllBooks() {
         System.out.println("Are you sure? [y/n]");
-        if(scanner.nextLine().equals("y")){
+        if (scanner.nextLine().equals("y")) {
             library = new HashMap<>();
             System.out.println("Deletion successful");
             return;
@@ -136,11 +138,6 @@ public class Main {
         number = scanner.nextLine();
         readers.add(new Reader(login, password, name, number));
         return readers.get(readers.size() - 1);
-    }
-
-    //    TODO: -readerPanel(): void
-    private static void readerPanel() {
-        readerPanel(toggleReader());
     }
 
     private static void readerPanel(Reader reader) {
@@ -175,23 +172,29 @@ public class Main {
 
     }
 
-//    TODO: readBook
+    //    TODO: readBook
     private static void readBook() {
 
     }
 
-//    TODO: showBooksOnHand
     private static void showBooksOnHand() {
         System.out.println("Books that you have are:");
         int i = 1;
-        for (Book b : ((Reader)currentUser).getBooksOnHand()) {
+        for (Book b : ((Reader) currentUser).getBooksOnHand()) {
             System.out.println(i++ + ".");
             b.shortShow();
         }
     }
 
-//    TODO: returnBook()
     private static void returnBook() {
-
+        showBooksOnHand();
+        ArrayList<Book> books = ((Reader) currentUser).getBooksOnHand();
+        System.out.println("Choose book to return. Type Position of desired book");
+        int position = Integer.parseInt(scanner.nextLine());
+        if (position >= books.size() || position - 1 < 0 ) {
+            System.out.println("Invalid index");
+            return;
+        }
+        ((Reader) currentUser).returnBook(books.get(position));
     }
 }

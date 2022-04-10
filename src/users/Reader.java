@@ -23,14 +23,15 @@ public class Reader extends User{
         booksOnHand = new ArrayList<>();
     }
 
-
-
-    //    TODO: +rentBook(Book): void
     public void rentBook(Book book) {
         card.addBook(book);
         booksOnHand.add(book);
     }
-//    TODO: +returnBook(Book): void
+
+     public void returnBook(Book book) {
+        card.removeBook(book);
+        booksOnHand.remove(book);
+    }
 
     public boolean check(String login, String password) {
         return this.login.equals(login) && this.password.equals(this.password);

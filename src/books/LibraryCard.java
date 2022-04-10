@@ -8,9 +8,6 @@ public class LibraryCard {
     private Reader owner;
     private HashMap<Book, Duration> history;
 
-//    TODO +removeBook(Book): void
-
-
     public LibraryCard(Reader owner) {
         this.owner = owner;
         this.history = new HashMap<>();
@@ -21,11 +18,16 @@ public class LibraryCard {
         this.history = history;
     }
 
-    //    TODO +addBook(Book): void
     public void addBook(Book book) {
         history.put(book, new Duration());
     }
 
+//    TODO +removeBook(Book): void
+    public void removeBook(Book book) {
+        Duration end = history.get(book);
+        end.end();
+        history.put(book, end);
+    }
     public Reader getOwner() {
         return owner;
     }
