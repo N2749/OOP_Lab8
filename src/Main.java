@@ -14,6 +14,7 @@ public class Main {
     private static String choice;
 
     public static void main(String[] args) {
+        addBooks();
         do {
             System.out.println("Hello, have you been here before? [y/n]");
             System.out.println("If you want to leave type \"q\"");
@@ -27,6 +28,35 @@ public class Main {
                 default -> System.out.println("Invalid input");
             }
         } while (!choice.equalsIgnoreCase("q"));
+    }
+
+    private static void addBooks() {
+        library.put(
+                new Book(
+                        "Sapiens. A Brief History of Humankind",
+                        "Yuval Noah Harari",
+                        2011,
+                        "A book by Professor Yuval Noah Harari, first published in Hebrew in Israel in 2011 and in English in 2014. Harari cites Jared Diamond's Guns, Germs and Steel as one of his main inspirations, showing that you can \"ask very big questions and answer them scientifically.\""
+                ),
+                true);
+        library.put(
+                new Book(
+                        "The God Delusion",
+                        "Richard Dawkins",
+                        2006,
+                        "In The God Delusion, Dawkins contends that a supernatural creator, God, almost certainly does not exist, and that belief in a personal god qualifies as a delusion, which he defines as a persistent false belief held in the face of strong contradictory evidence. He is sympathetic to Robert Pirsig's statement in Lila (1991) that \"when one person suffers from a delusion it is called insanity. When many people suffer from a delusion it is called religion.\"[3] With many examples, he explains that one does not need religion to be moral and that the roots of religion and of morality can be explained in non-religious terms.\n"
+
+                ),
+                true);
+        library.put(
+                new Book(
+                        "The Selfish Gene",
+                        "Richard Dawkins",
+                        1976,
+                        "The Selfish Gene is a 1976 book on evolution by the ethologist Richard Dawkins, in which the author builds upon the principal theory of George C. Williams's Adaptation and Natural Selection (1966). Dawkins uses the term \"selfish gene\" as a way of expressing the gene-centred view of evolution (as opposed to the views focused on the organism and the group), popularising ideas developed during the 1960s by W. D. Hamilton and others. From the gene-centred view, it follows that the more two individuals are genetically related, the more sense (at the level of the genes) it makes for them to behave cooperatively with each other." +
+                                "\n"
+                ),
+                true);
     }
 
     private static void adminPanel() {
@@ -72,9 +102,22 @@ public class Main {
         library.put(b, true);
     }
 
-    //    TODO: -showBook(): void (for admin)
     private static void showBook() {
-
+        int i = 1;
+        ArrayList<Book> books = new ArrayList<>();
+        for (Map.Entry<Book, Boolean> shows : library.entrySet()) {
+            System.out.println();
+            System.out.print((i++) + " | ");
+            shows.getKey().shortShow();
+            books.add(shows.getKey());
+        }
+        System.out.println("Choose book to show the full information of. Type Position of desired book");
+        int position = Integer.parseInt(scanner.nextLine());
+        if (position >= books.size() || position - 1 < 0) {
+            System.out.println("Invalid index");
+            return;
+        }
+        books.get(position).show();
     }
 
     //    TODO: -editBook()
@@ -82,7 +125,6 @@ public class Main {
 
     }
 
-    //    TODO: -deleteBook(): void (for admin)
     private static void deleteBook() {
         int i = 1;
         ArrayList<Book> books = new ArrayList<>();
@@ -94,7 +136,7 @@ public class Main {
         }
         System.out.println("Choose book to delete. Type Position of desired book");
         int position = Integer.parseInt(scanner.nextLine());
-        if (position >= books.size() || position - 1 < 0 ) {
+        if (position >= books.size() || position - 1 < 0) {
             System.out.println("Invalid index");
             return;
         }
@@ -200,7 +242,7 @@ public class Main {
         }
         System.out.println("Choose book to take. Type Position of desired book");
         int position = Integer.parseInt(scanner.nextLine());
-        if (position >= availableBooks.size() || position - 1 < 0 ) {
+        if (position >= availableBooks.size() || position - 1 < 0) {
             System.out.println("Invalid index");
             return;
         }
@@ -214,7 +256,7 @@ public class Main {
         ArrayList<Book> books = ((Reader) currentUser).getBooksOnHand();
         System.out.println("Choose book to read. Type Position of desired book");
         int position = Integer.parseInt(scanner.nextLine());
-        if (position >= books.size() || position - 1 < 0 ) {
+        if (position >= books.size() || position - 1 < 0) {
             System.out.println("Invalid index");
             return;
         }
@@ -235,7 +277,7 @@ public class Main {
         ArrayList<Book> books = ((Reader) currentUser).getBooksOnHand();
         System.out.println("Choose book to return. Type Position of desired book");
         int position = Integer.parseInt(scanner.nextLine());
-        if (position >= books.size() || position - 1 < 0 ) {
+        if (position >= books.size() || position - 1 < 0) {
             System.out.println("Invalid index");
             return;
         }
