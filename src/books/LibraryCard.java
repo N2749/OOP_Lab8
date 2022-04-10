@@ -22,7 +22,6 @@ public class LibraryCard {
         history.put(book, new Duration());
     }
 
-//    TODO +removeBook(Book): void
     public void removeBook(Book book) {
         Duration end = history.get(book);
         end.end();

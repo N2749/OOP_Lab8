@@ -27,7 +27,6 @@ public class Book implements Showable {
         this.summary = summary;
     }
 
-    //TODO addReader
     public void addReader(Reader reader) {
         addReader(reader, new Duration());
     }
@@ -66,6 +65,15 @@ public class Book implements Showable {
                 Author: %s.
                 Published year: %d.
                 """, name, author, publishingYear);
+    }
+
+    public void read() {
+        System.out.printf("""
+                Name: %s.
+                Author: %s.
+                Published year: %d.
+                Summary: %s
+                """, name, author, publishingYear, summary);
     }
 
     public String getName() {
