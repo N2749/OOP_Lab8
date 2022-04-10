@@ -59,12 +59,14 @@ public class Main {
 
     //    TODO: -addBook(Book): void (for admin)
     private static void addBook() {
-        String name, author;
+        String name, author, summary;
         int publishingYear;
         System.out.println("Enter the name for the new book");
         name = scanner.nextLine();
         System.out.println("Enter the author of the new book");
         author = scanner.nextLine();
+        System.out.println("Enter the summary of the new book");
+        summary = scanner.nextLine();
         System.out.println("Enter the year of publishing of the new book");
         publishingYear = Integer.parseInt(scanner.nextLine());
         Book b = new Book(name, author, publishingYear);

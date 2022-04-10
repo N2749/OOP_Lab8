@@ -10,12 +10,21 @@ public class Book implements Showable {
     private String author;
     private int publishingYear;
     private HashMap<Reader, Duration> history;
+    private String summary;
 
     public Book(String name, String author, int publishingYear) {
         this.name = name;
         this.author = author;
         this.publishingYear = publishingYear;
         history = new HashMap<>();
+    }
+
+    public Book(String name, String author, int publishingYear, String summary) {
+        this.name = name;
+        this.author = author;
+        this.publishingYear = publishingYear;
+        this.history = new HashMap<>();
+        this.summary = summary;
     }
 
     //TODO addReader
@@ -39,10 +48,10 @@ public class Book implements Showable {
                 Name: %s.
                 Author: %s.
                 Published year: %d.
-                                
+                Summary: %s
                 History:
                  POSITION | READER | DURATION
-                """, name, author, publishingYear);
+                """, name, author, publishingYear, summary);
         int i = 1;
 
         for (Map.Entry<Reader, Duration> readerDurationEntry : history.entrySet()) {
