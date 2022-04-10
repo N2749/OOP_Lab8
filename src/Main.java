@@ -8,7 +8,7 @@ import java.util.*;
 public class Main {
     private static User currentUser;
     private static Scanner scanner = new Scanner(System.in);
-    private static Map<Book, Boolean> library = new HashMap<>();
+    private static Map<Book, Boolean> library = new HashMap<>();// book and availability true means book is present in library, not in hands of a reader
     private static List<Reader> readers = new ArrayList<>();
     private static List<Admin> admins = new ArrayList<>();
     private static String choice;
@@ -28,8 +28,6 @@ public class Main {
             }
         } while (!choice.equalsIgnoreCase("q"));
     }
-
-//    TODO: -adminPanel(): void
 
     private static void adminPanel() {
         do {
@@ -61,7 +59,16 @@ public class Main {
 
     //    TODO: -addBook(Book): void (for admin)
     private static void addBook() {
-
+        String name, author;
+        int publishingYear;
+        System.out.println("Enter the name for the new book");
+        name = scanner.nextLine();
+        System.out.println("Enter the author of the new book");
+        author = scanner.nextLine();
+        System.out.println("Enter the year of publishing of the new book");
+        publishingYear = Integer.parseInt(scanner.nextLine());
+        Book b = new Book(name, author, publishingYear);
+        library.put(b, true);
     }
 
     //    TODO: -showBook(): void (for admin)
@@ -155,7 +162,6 @@ public class Main {
 
 //    TODO: showBooksOnHand
     private static void showBooksOnHand() {
-
     }
 
 //    TODO: returnBook()
