@@ -24,11 +24,13 @@ public class Reader extends User{
     }
 
     public void rentBook(Book book) {
+        book.addReader(this);
         card.addBook(book);
         booksOnHand.add(book);
     }
 
      public void returnBook(Book book) {
+        book.endPeriod(this);
         card.removeBook(book);
         booksOnHand.remove(book);
     }

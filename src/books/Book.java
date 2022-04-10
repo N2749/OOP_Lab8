@@ -20,9 +20,19 @@ public class Book implements Showable {
 
     //TODO addReader
     public void addReader(Reader reader) {
+        addReader(reader, new Duration());
     }
 
-    //TODO show
+    public void addReader(Reader reader, Duration duration) {
+        history.put(reader, duration);
+    }
+
+    public void endPeriod(Reader reader) {
+        Duration duration = history.get(reader);
+        duration.end();
+        history.put(reader, duration);
+    }
+
     @Override
     public void show() {
         System.out.printf("""
@@ -36,7 +46,7 @@ public class Book implements Showable {
         int i = 1;
 
         for (Map.Entry<Reader, Duration> readerDurationEntry : history.entrySet()) {
-            System.out.printf(" %8d | %16S | %d\n", i++, readerDurationEntry.getKey(),
+            System.out.printf(" %8d | %16S | %f\n", i++, readerDurationEntry.getKey(),
                     readerDurationEntry.getValue().calculateDuration());
         }
     }
@@ -46,9 +56,6 @@ public class Book implements Showable {
                 Name: %s.
                 Author: %s.
                 Published year: %d.
-                                
-                History:
-                 POSITION | READER | DURATION
                 """, name, author, publishingYear);
     }
 

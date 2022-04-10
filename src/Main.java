@@ -7,10 +7,10 @@ import java.util.*;
 
 public class Main {
     private static User currentUser;
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     private static Map<Book, Boolean> library = new HashMap<>();// book and availability true means book is present in library, not in hands of a reader
-    private static List<Reader> readers = new ArrayList<>();
-    private static List<Admin> admins = new ArrayList<>();
+    private static final List<Reader> readers = new ArrayList<>();
+    private static final List<Admin> admins = new ArrayList<>();
     private static String choice;
 
     public static void main(String[] args) {
@@ -90,20 +90,18 @@ public class Main {
         int i = 1;
         System.out.println("______Available books______");
         for (Map.Entry<Book, Boolean> shows : library.entrySet()) {
-            if (shows.getValue() == true) {
-                System.out.println("");
-                System.out.print((i++) + ") ");
+            if (shows.getValue()) {
+                System.out.println();
+                System.out.print((i++) + " | ");
                 shows.getKey().shortShow();
-                System.out.println("\n");
             }
         }
         System.out.println("______Not Available books______");
         for (Map.Entry<Book, Boolean> shows : library.entrySet()) {
-            if (shows.getValue() == false) {
-                System.out.println("");
-                System.out.print((i++) + ") ");
+            if (!shows.getValue()) {
+                System.out.println();
+                System.out.print((i++) + " | ");
                 shows.getKey().shortShow();
-                System.out.println("\n");
             }
         }
     }
@@ -127,7 +125,7 @@ public class Main {
         for (Reader r : readers) {
             if (r.check(login, password)) {
                 currentUser = r;
-                System.out.printf("Welcome to our Library, %s %s.\n", login, password);
+                System.out.printf("Welcome to our Library, %s.\n", ((Reader) currentUser).getName());
                 return r;
             }
         }
@@ -169,7 +167,25 @@ public class Main {
 
     //    TODO: -takeBook(Book): void (for reader)
     private static void takeBook() {
+        int i = 1;
+        ArrayList<Map.Entry<Book, Boolean>> availableBooks = new ArrayList<>();
+        System.out.println("______Available books______");
+        for (Map.Entry<Book, Boolean> shows : library.entrySet()) {
+            if (shows.getValue()) {
+                availableBooks.add(shows);
+                System.out.println();
+                System.out.print((i++) + " | ");
+                shows.getKey().shortShow();
+            }
+        }
+        int position = Integer.parseInt(scanner.nextLine());
+        if (position >= availableBooks.size() || position - 1 < 0 ) {
+            System.out.println("Invalid index");
+            return;
+        }
 
+        ((Reader) currentUser).rentBook(availableBooks.get(position).getKey());
+        library.put(availableBooks.get(position).getKey(), false);
     }
 
     //    TODO: readBook
