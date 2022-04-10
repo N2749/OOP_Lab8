@@ -49,12 +49,12 @@ public class Book implements Showable {
                 Published year: %d.
                 Summary: %s
                 History:
-                 POSITION | READER | DURATION
+                 POSITION |      READER      | DURATION (in minutes)
                 """, name, author, publishingYear, summary);
         int i = 1;
 
         for (Map.Entry<Reader, Duration> readerDurationEntry : history.entrySet()) {
-            System.out.printf(" %8d | %16S | %f\n", i++, readerDurationEntry.getKey(),
+            System.out.printf(" %8d | %16s | %f\n", i++, readerDurationEntry.getKey().getName(),
                     readerDurationEntry.getValue().calculateDuration());
         }
     }

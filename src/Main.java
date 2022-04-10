@@ -113,14 +113,13 @@ public class Main {
         }
         System.out.println("Choose book to show the full information of. Type Position of desired book");
         int position = Integer.parseInt(scanner.nextLine());
-        if (position >= books.size() || position - 1 < 0) {
+        if (position > books.size() || position - 1 < 0) {
             System.out.println("Invalid index");
             return;
         }
-        books.get(position).show();
+        books.get(position - 1).show();
     }
 
-    //    TODO: -editBook()
     private static void editBook() {
 
     }
@@ -129,20 +128,22 @@ public class Main {
         int i = 1;
         ArrayList<Book> books = new ArrayList<>();
         for (Map.Entry<Book, Boolean> shows : library.entrySet()) {
+            books.add(shows.getKey());
+        }
+        for (Book b : books) {
             System.out.println();
             System.out.print((i++) + " | ");
-            shows.getKey().shortShow();
-            books.add(shows.getKey());
+            b.shortShow();
         }
         System.out.println("Choose book to delete. Type Position of desired book");
         int position = Integer.parseInt(scanner.nextLine());
-        if (position >= books.size() || position - 1 < 0) {
+        if (position > books.size() || position - 1 < 0) {
             System.out.println("Invalid index");
             return;
         }
         System.out.println("Are you sure? [y/n]");
         if (scanner.nextLine().equals("y")) {
-            library.remove(books.get(position));
+            library.remove(books.get(position - 1));
             System.out.println("Deletion successful");
             return;
         }
@@ -180,7 +181,7 @@ public class Main {
     }
 
     private static Reader toggleReader() {
-        String login, password;
+        String login, password, name, number;
         System.out.println("Enter your login");
         login = scanner.nextLine();
         System.out.println("Enter your password?");
@@ -193,7 +194,6 @@ public class Main {
             }
         }
         System.out.println("How we can call you?");
-        String name, number;
         name = scanner.nextLine();
         System.out.println("How we can contact you? (phone number)");
         number = scanner.nextLine();
@@ -202,17 +202,17 @@ public class Main {
     }
 
     private static void readerPanel(Reader reader) {
+        currentUser = reader;
         do {
             System.out.println("""
-                    Welcome,""" + reader.getName() + """
+                    Welcome,\040""" + reader.getName() + """
                     , What do you want to do?
                     1 | Take book.
                     2 | Read book.
                     3 | Show books on my hands.
                     4 | Return book.
                     5 | Show all books.
-                    6 | Quit.
-                    """);
+                    6 | Quit.""");
             choice = scanner.nextLine();
             switch (choice) {
                 case "1" -> takeBook();
@@ -230,25 +230,28 @@ public class Main {
 
     private static void takeBook() {
         int i = 1;
-        ArrayList<Map.Entry<Book, Boolean>> availableBooks = new ArrayList<>();
+        ArrayList<Book> availableBooks = new ArrayList<>();
         System.out.println("______Available books______");
         for (Map.Entry<Book, Boolean> shows : library.entrySet()) {
             if (shows.getValue()) {
-                availableBooks.add(shows);
-                System.out.println();
-                System.out.print((i++) + " | ");
-                shows.getKey().shortShow();
+                availableBooks.add(shows.getKey());
             }
+        }
+
+        for (Book b : availableBooks) {
+            System.out.println();
+            System.out.print((i++) + " | ");
+            b.shortShow();
         }
         System.out.println("Choose book to take. Type Position of desired book");
         int position = Integer.parseInt(scanner.nextLine());
-        if (position >= availableBooks.size() || position - 1 < 0) {
+        if (position > availableBooks.size() || position - 1 < 0) {
             System.out.println("Invalid index");
             return;
         }
 
-        ((Reader) currentUser).rentBook(availableBooks.get(position).getKey());
-        library.put(availableBooks.get(position).getKey(), false);
+        ((Reader) currentUser).rentBook(availableBooks.get(position -1));
+        library.put(availableBooks.get(position - 1), false);
     }
 
     private static void readBook() {
@@ -256,11 +259,11 @@ public class Main {
         ArrayList<Book> books = ((Reader) currentUser).getBooksOnHand();
         System.out.println("Choose book to read. Type Position of desired book");
         int position = Integer.parseInt(scanner.nextLine());
-        if (position >= books.size() || position - 1 < 0) {
+        if (position > books.size() || position - 1 < 0) {
             System.out.println("Invalid index");
             return;
         }
-        books.get(position).read();
+        books.get(position - 1).read();
     }
 
     private static void showBooksOnHand() {
@@ -277,10 +280,11 @@ public class Main {
         ArrayList<Book> books = ((Reader) currentUser).getBooksOnHand();
         System.out.println("Choose book to return. Type Position of desired book");
         int position = Integer.parseInt(scanner.nextLine());
-        if (position >= books.size() || position - 1 < 0) {
+        if (position > books.size() || position - 1 < 0) {
             System.out.println("Invalid index");
             return;
         }
-        ((Reader) currentUser).returnBook(books.get(position));
+        library.put(books.get(position - 1), true);
+        ((Reader) currentUser).returnBook(books.get(position - 1));
     }
 }

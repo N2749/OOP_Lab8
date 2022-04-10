@@ -13,12 +13,14 @@ public class Duration {
 
     public double calculateDuration() {
         if(end == null)
-            return (new Date().getTime() - start.getTime()) / (1000 * 60);
+            return ((double) new Date().getTime() - start.getTime()) / 60000;
         return end.getTime() - start.getTime();
     }
 
     public double end(){
-        end = new Date();
+        if(end != null) {
+            end = new Date();
+        }
         return calculateDuration();
     }
 }

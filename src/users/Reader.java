@@ -16,7 +16,7 @@ public class Reader extends User{
         super(login, password);
     }
 
-    public Reader(String login, String password, String number, String name) {
+    public Reader(String login, String password, String name, String number) {
         super(login, password);
         this.number = number;
         this.name = name;
