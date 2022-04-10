@@ -73,7 +73,21 @@ public class Main {
 
     //    TODO: -showBook(): void (for admin)
     private static void showBook() {
-
+        int i=1;
+        System.out.println("______Available books______");
+        for (Map.Entry<Book, Boolean> shows: library.entrySet()){
+            if (shows.getValue()==true){
+                System.out.println("");
+                System.out.print((i++)+") ");shows.getKey().shortShow();System.out.println("\n");
+            }
+        }
+        System.out.println("______Not Available books______");
+        for (Map.Entry<Book, Boolean> shows: library.entrySet()){
+            if (shows.getValue()==false){
+                System.out.println("");
+                System.out.print((i++)+") ");shows.getKey().shortShow();System.out.println("\n");
+            }
+        }
     }
 
     //    TODO: -editBook()
