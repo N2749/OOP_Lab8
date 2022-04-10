@@ -1,0 +1,68 @@
+package users;
+
+import books.Book;
+import books.LibraryCard;
+
+import java.util.ArrayList;
+
+public class Reader extends User{
+
+    private String number;
+    private String name;
+    private LibraryCard card = new LibraryCard(this);
+    private ArrayList<Book> booksOnHand;
+
+    public Reader(String login, String password) {
+        super(login, password);
+    }
+
+    public Reader(String login, String password, String number, String name) {
+        super(login, password);
+        this.number = number;
+        this.name = name;
+    }
+
+    //    TODO: +rentBook(Book): void
+    public void rentBook(Book book) {
+        card.addBook(book);
+        booksOnHand.add(book);
+    }
+//    TODO: +returnBook(Book): void
+
+    public boolean check(String login, String password) {
+        return this.login.equals(login) && this.password.equals(this.password);
+
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LibraryCard getCard() {
+        return card;
+    }
+
+    public void setCard(LibraryCard card) {
+        this.card = card;
+    }
+
+    public ArrayList<Book> getBooksOnHand() {
+        return booksOnHand;
+    }
+
+    public void setBooksOnHand(ArrayList<Book> booksOnHand) {
+        this.booksOnHand = booksOnHand;
+    }
+}
