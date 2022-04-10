@@ -1,15 +1,16 @@
 import books.Book;
+import users.Admin;
+import users.Reader;
 import users.User;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     private static User currentUser;
     private static Scanner scanner = new Scanner(System.in);
     private static Map<Book, Boolean> library = new HashMap<>();
-
+    private static List<Reader> readers = new ArrayList<>();
+    private static List<Admin> admins= new ArrayList<>();
     public static void main(String[] args) {
 
     }
