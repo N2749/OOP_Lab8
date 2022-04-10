@@ -20,7 +20,10 @@ public class Reader extends User{
         super(login, password);
         this.number = number;
         this.name = name;
+        booksOnHand = new ArrayList<>();
     }
+
+
 
     //    TODO: +rentBook(Book): void
     public void rentBook(Book book) {

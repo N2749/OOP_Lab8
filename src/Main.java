@@ -107,7 +107,13 @@ public class Main {
 
     //    TODO: -deleteAllBooks
     private static void deleteAllBooks() {
-
+        System.out.println("Are you sure? [y/n]");
+        if(scanner.nextLine().equals("y")){
+            library = new HashMap<>();
+            System.out.println("Deletion successful");
+            return;
+        }
+        System.out.println("Deletion was not done.");
     }
 
     private static Reader toggleReader() {
@@ -178,7 +184,10 @@ public class Main {
     private static void showBooksOnHand() {
         System.out.println("Books that you have are:");
         int i = 1;
-        for (Book b : currentUser.get)
+        for (Book b : ((Reader)currentUser).getBooksOnHand()) {
+            System.out.println(i++ + ".");
+            b.shortShow();
+        }
     }
 
 //    TODO: returnBook()
