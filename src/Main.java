@@ -73,6 +73,21 @@ public class Main {
 
     //    TODO: -showBook(): void (for admin)
     private static void showBook() {
+
+    }
+
+    //    TODO: -editBook()
+    private static void editBook() {
+
+    }
+
+    //    TODO: -deleteBook(): void (for admin)
+    private static void deleteBook() {
+
+    }
+
+    //    TODO: -showAllBooks
+    private static void showAllBooks() {
         int i=1;
         System.out.println("______Available books______");
         for (Map.Entry<Book, Boolean> shows: library.entrySet()){
@@ -88,21 +103,6 @@ public class Main {
                 System.out.print((i++)+") ");shows.getKey().shortShow();System.out.println("\n");
             }
         }
-    }
-
-    //    TODO: -editBook()
-    private static void editBook() {
-
-    }
-
-    //    TODO: -deleteBook(): void (for admin)
-    private static void deleteBook() {
-
-    }
-
-    //    TODO: -showAllBooks
-    private static void showAllBooks() {
-
     }
 
     //    TODO: -deleteAllBooks
