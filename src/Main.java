@@ -10,18 +10,117 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
     private static Map<Book, Boolean> library = new HashMap<>();
     private static List<Reader> readers = new ArrayList<>();
-    private static List<Admin> admins= new ArrayList<>();
-    public static void main(String[] args) {
+    private static List<Admin> admins = new ArrayList<>();
+    private static String choice;
 
+    public static void main(String[] args) {
+        do {
+            System.out.println("Hello, have you been here before? [y/n]");
+            System.out.println("If you want to leave type \"q\"");
+            choice = scanner.nextLine();
+            switch (choice.toLowerCase()) {
+                case "y", "n" -> readerPanel(toggleReader());
+                case "q" -> {
+                    return;
+                }
+                case "admin" -> adminPanel();
+                default -> System.out.println("Invalid input");
+            }
+        } while (!choice.equalsIgnoreCase("q"));
     }
 
 //    TODO: -adminPanel(): void
 
-//    TODO: -addBook(Book): void (for admin)
+    private static void adminPanel() {
+        do {
+            System.out.println("""
+                    Welcome, Master. What do you want to do?
+                    1 | Add book.
+                    2 | Show book.
+                    3 | Edit Book.
+                    4 | Delete book.
+                    5 | Show all books.
+                    6 | Delete all books.
+                    7 | Quit.
+                    """);
+            choice = scanner.nextLine();
+            switch (choice) {
+                case "1" -> addBook();
+                case "2" -> showBook();
+                case "3" -> editBook();
+                case "4" -> deleteBook();
+                case "5" -> showAllBooks();
+                case "6" -> deleteAllBooks();
+                case "7" -> {
+                    return;
+                }
+                default -> System.out.println("Invalid input");
+            }
+        } while (true);
+    }
 
-//    TODO: -removeBook(): void (for admin)
+    //    TODO: -addBook(Book): void (for admin)
+    private static void addBook() {
 
-//    TODO: -readerPanel(): void
+    }
+
+    //    TODO: -showBook(): void (for admin)
+    private static void showBook() {
+
+    }
+
+    //    TODO: -editBook()
+    private static void editBook() {
+
+    }
+
+    //    TODO: -deleteBook(): void (for admin)
+    private static void deleteBook() {
+
+    }
+
+    //    TODO: -showAllBooks
+    private static void showAllBooks() {
+
+    }
+
+    //    TODO: -deleteAllBooks
+    private static void deleteAllBooks() {
+
+    }
+
+    //    TODO: -logIn()
+    private static boolean logIn() {
+        String login, password;
+        System.out.println("Enter your login");
+        login = scanner.nextLine();
+        System.out.println("Enter your password?");
+        password = scanner.nextLine();
+        currentUser = toggleReader(login, password);
+        System.out.printf("Welcome to our Tea House, %s %s.\n", login, password);
+    }
+
+    private static User toggleReader(String login, String password) {
+        logIn();
+        for (Reader r : readers) {
+            if (r.check(name, number)) {
+                return r;
+            }
+        }
+        clients.add(new OrdinaryClient(name, surname));
+        return clients.get(clients.size() - 1);
+    }
+
+    //    TODO: -readerPanel(): void
+    private static void readerPanel() {
+        readerPanel(toggleReader());
+    }
+
+    private static void readerPanel(Reader reader) {
+    }
+
+
+
 
 //    TODO: -takeBook(Book): void (for reader)
 

@@ -20,6 +20,11 @@ public class Reader extends User{
 
 //    TODO: +returnBook(Book): void
 
+    public boolean check(String login, String password) {
+        return this.login.equals(login) && this.password.equals(this.password);
+
+    }
+
     public String getNumber() {
         return number;
     }

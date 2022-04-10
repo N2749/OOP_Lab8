@@ -1,8 +1,8 @@
 package users;
 
 public abstract class User {
-    private String login;
-    private String password;
+    String login;
+    String password;
 
     public User(String login, String password) {
         this.login = login;
