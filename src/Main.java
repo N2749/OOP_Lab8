@@ -37,7 +37,7 @@ public class Main {
                     Welcome, Master. What do you want to do?
                     1 | Add book.
                     2 | Show book.
-                    3 | Edit Book.
+                    3 | Edit book.
                     4 | Delete book.
                     5 | Show all books.
                     6 | Delete all books.
@@ -89,26 +89,26 @@ public class Main {
 
     }
 
-    //    TODO: -logIn()
-    private static boolean logIn() {
+    private static Reader toggleReader() {
         String login, password;
         System.out.println("Enter your login");
         login = scanner.nextLine();
         System.out.println("Enter your password?");
         password = scanner.nextLine();
-        currentUser = toggleReader(login, password);
-        System.out.printf("Welcome to our Tea House, %s %s.\n", login, password);
-    }
-
-    private static User toggleReader(String login, String password) {
-        logIn();
         for (Reader r : readers) {
-            if (r.check(name, number)) {
+            if (r.check(login, password)) {
+                currentUser = r;
+                System.out.printf("Welcome to our Library, %s %s.\n", login, password);
                 return r;
             }
         }
-        clients.add(new OrdinaryClient(name, surname));
-        return clients.get(clients.size() - 1);
+        System.out.println("How we can call you?");
+        String name, number;
+        name = scanner.nextLine();
+        System.out.println("How we can contact you? (phone number)");
+        number = scanner.nextLine();
+        readers.add(new Reader(login, password, name, number));
+        return readers.get(readers.size() - 1);
     }
 
     //    TODO: -readerPanel(): void
@@ -117,12 +117,49 @@ public class Main {
     }
 
     private static void readerPanel(Reader reader) {
+        do {
+            System.out.println("""
+                    Welcome,""" + reader.getName() + """
+                    , What do you want to do?
+                    1 | Take book.
+                    2 | Read book.
+                    3 | Show books on my hands.
+                    4 | Return book.
+                    5 | Show all books.
+                    6 | Quit.
+                    """);
+            choice = scanner.nextLine();
+            switch (choice) {
+                case "1" -> takeBook();
+                case "2" -> readBook();
+                case "3" -> showBooksOnHand();
+                case "4" -> returnBook();
+                case "5" -> showAllBooks();
+                case "6" -> {
+                    return;
+                }
+                default -> System.out.println("Invalid input");
+            }
+        } while (true);
     }
 
+    //    TODO: -takeBook(Book): void (for reader)
+    private static void takeBook() {
 
+    }
 
+//    TODO: readBook
+    private static void readBook() {
 
-//    TODO: -takeBook(Book): void (for reader)
+    }
 
-//    TODO: -returnBook(Book): Book (for reader)
+//    TODO: showBooksOnHand
+    private static void showBooksOnHand() {
+
+    }
+
+//    TODO: returnBook()
+    private static void returnBook() {
+
+    }
 }

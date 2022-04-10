@@ -11,6 +11,16 @@ public class LibraryCard {
 //    TODO +removeBook(Book): void
 //    TODO +addBook(Book): void
 
+    public LibraryCard(Reader owner) {
+        this.owner = owner;
+        this.history = new HashMap<>();
+    }
+
+    public LibraryCard(Reader owner, HashMap<Book, Duration> history) {
+        this.owner = owner;
+        this.history = history;
+    }
+
     public Reader getOwner() {
         return owner;
     }

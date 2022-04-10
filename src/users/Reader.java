@@ -9,14 +9,20 @@ public class Reader extends User{
 
     private String number;
     private String name;
-    private LibraryCard card;
+    private LibraryCard card = new LibraryCard(this);
     private ArrayList<Book> booksOnHand;
 
     public Reader(String login, String password) {
         super(login, password);
     }
 
-//    TODO: +rentBook(Book): void
+    public Reader(String login, String password, String number, String name) {
+        super(login, password);
+        this.number = number;
+        this.name = name;
+    }
+
+    //    TODO: +rentBook(Book): void
 
 //    TODO: +returnBook(Book): void
 
