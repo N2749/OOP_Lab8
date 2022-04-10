@@ -121,7 +121,33 @@ public class Main {
     }
 
     private static void editBook() {
-
+        int i = 1;
+        ArrayList<Book> books = new ArrayList<>();
+        for (Map.Entry<Book, Boolean> shows : library.entrySet()) {
+            System.out.println();
+            System.out.print((i++) + " | ");
+            shows.getKey().shortShow();
+            books.add(shows.getKey());
+        }
+        System.out.println("Choose book to edit. Type Position of desired book");
+        int position = Integer.parseInt(scanner.nextLine());
+        if (position > books.size() || position - 1 < 0 ) {
+            System.out.println("Invalid index");
+            return;
+        }
+        System.out.println("Are you sure? [y/n]");
+        if (scanner.nextLine().equals("y")) {
+            library.remove(books.get(position-1));
+            System.out.println("Enter the name: ");
+            String name=scanner.next();
+            System.out.println("Enter the author: ");
+            String author=scanner.next();
+            System.out.println("Enter the publishing year: ");
+            int year=scanner.nextInt();
+            library.put(new Book(name,author,year),true);
+            return;
+        }
+        System.out.println("Editing was not done.");
     }
 
     private static void deleteBook() {
