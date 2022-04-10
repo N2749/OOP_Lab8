@@ -15,7 +15,12 @@ public class Duration {
 
     //    TODO: calculateDuration
     public long calculateDuration() {
-        long duration = new Date
-        return 0L;
+        if(end == null)
+            return (new Date().getTime() - start.getTime()) / (1000 * 60);
+        return end.getTime() - start.getTime();
+    }
+
+    public long end(){
+
     }
 }
