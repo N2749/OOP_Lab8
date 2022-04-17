@@ -2,8 +2,10 @@ package books;
 
 import users.Reader;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.*;
 
 public class Book implements Showable {
     private String name;
@@ -11,6 +13,7 @@ public class Book implements Showable {
     private int publishingYear;
     private HashMap<Reader, Duration> history;
     private String summary;
+    private File bookAsFile;
 
     public Book(String name, String author, int publishingYear) {
         this.name = name;
@@ -25,6 +28,15 @@ public class Book implements Showable {
         this.publishingYear = publishingYear;
         this.history = new HashMap<>();
         this.summary = summary;
+    }
+
+    public Book(String name, String author, int publishingYear, String summary, File bookAsFile) {
+        this.name = name;
+        this.author = author;
+        this.publishingYear = publishingYear;
+        this.history = new HashMap<>();
+        this.summary = summary;
+        this.bookAsFile = bookAsFile;
     }
 
     public void addReader(Reader reader) {
@@ -67,13 +79,32 @@ public class Book implements Showable {
                 """, name, author, publishingYear);
     }
 
-    public void read() {
-        System.out.printf("""
-                Name: %s.
-                Author: %s.
-                Published year: %d.
-                Summary: %s
-                """, name, author, publishingYear, summary);
+    public void read() throws FileNotFoundException {
+        Scanner scanner = new Scanner(new FileReader(bookAsFile));
+        Scanner sScanner = new Scanner(System.in);
+        String choice;
+        int currentPage = 1;
+        List<String> bookAsArray = new ArrayList<>();
+        System.out.println("""
+                p | go to previous page.
+                n | go to next page.
+                q | quit.""");
+        do {
+            for (int i = 0; i < 5; i++) {
+                if(scanner.nextLine().equals("")){
+                    System.out.println("\n\t");
+                }
+                bookAsArray.add(scanner.nextLine());
+                System.out.println(bookAsArray.get(bookAsArray.size() - 1));
+                System.out.println("Page: " + currentPage++);
+            }
+            choice = sScanner.nextLine();
+            if (choice.equals("p")) {
+                System.out.println(bookAsArray.get(--currentPage));
+            }
+        } while (!choice.equals("q"));
+        scanner.close();
+        sScanner.close();
     }
 
     public String getName() {
