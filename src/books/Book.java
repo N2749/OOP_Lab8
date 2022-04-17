@@ -14,6 +14,8 @@ public class Book implements Showable {
     private HashMap<Reader, Duration> history;
     private String summary;
     private File bookAsFile;
+    private List<String> bookAsArray = new ArrayList<>();
+    private int currentPage = 1;
 
     public Book(String name, String author, int publishingYear) {
         this.name = name;
@@ -82,29 +84,34 @@ public class Book implements Showable {
     public void read() throws FileNotFoundException {
         Scanner scanner = new Scanner(new FileReader(bookAsFile));
         Scanner sScanner = new Scanner(System.in);
-        String choice;
-        int currentPage = 1;
-        List<String> bookAsArray = new ArrayList<>();
-        System.out.println("""
+        String choice, temp, page = "";
+        do {
+            for (int i = 0; i < 5; i++) {
+                page += scanner.nextLine() + "\n";
+                temp = scanner.nextLine();
+                if(temp.equals("")){
+                    scanner.nextLine();
+                    page += "\t";
+                } else {
+                    page += temp;
+                }
+            }
+            bookAsArray.add(page);
+            page = "";
+            System.out.println(bookAsArray.get(currentPage - 1));
+            System.out.println("Page: " + currentPage);
+            System.out.println("""
+                ========================
                 p | go to previous page.
                 n | go to next page.
                 q | quit.""");
-        do {
-            for (int i = 0; i < 5; i++) {
-                if(scanner.nextLine().equals("")){
-                    System.out.println("\n\t");
-                }
-                bookAsArray.add(scanner.nextLine());
-                System.out.println(bookAsArray.get(bookAsArray.size() - 1));
-                System.out.println("Page: " + currentPage++);
-            }
             choice = sScanner.nextLine();
             if (choice.equals("p")) {
                 System.out.println(bookAsArray.get(--currentPage));
+            } else {
+                currentPage++;
             }
         } while (!choice.equals("q"));
-        scanner.close();
-        sScanner.close();
     }
 
     public String getName() {

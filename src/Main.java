@@ -3,6 +3,7 @@ import users.Admin;
 import users.Reader;
 import users.User;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
@@ -82,7 +83,8 @@ public class Main {
                         2011,
                         "The Hustler is about the victories and losses of one \"Fast\" Eddie Felson, a poolroom hustler who travels from town to town conning strangers into thinking they could beat him at the game when in fact, he is a skillful player who has never lost a game. Until he meets his match in Minnesota Fats, the true king of the poolroom, causing his life to change drastically.\n" +
                                 "\n" +
-                                "This is a classic tale of a man's struggle with his soul and his self-esteem.\n"
+                                "This is a classic tale of a man's struggle with his soul and his self-esteem.\n",
+                        new File("library/The_Hustler.txt")
                 ), true
         );
         library.put(
