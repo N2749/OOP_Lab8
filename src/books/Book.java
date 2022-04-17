@@ -107,7 +107,9 @@ public class Book implements Showable {
                 q | quit.""");
             choice = sScanner.nextLine();
             if (choice.equals("p")) {
-                System.out.println(bookAsArray.get(--currentPage));
+                if (bookAsArray.get(--currentPage)=="") {
+                    System.out.println(bookAsArray.get(--currentPage));
+                }
             } else {
                 currentPage++;
             }

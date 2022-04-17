@@ -38,7 +38,8 @@ public class Main {
                         "Sapiens. A Brief History of Humankind",
                         "Yuval Noah Harari",
                         2011,
-                        "A book by Professor Yuval Noah Harari, first published in Hebrew in Israel in 2011 and in English in 2014. Harari cites Jared Diamond's Guns, Germs and Steel as one of his main inspirations, showing that you can \"ask very big questions and answer them scientifically.\""
+                        "A book by Professor Yuval Noah Harari, first published in Hebrew in Israel in 2011 and in English in 2014. Harari cites Jared Diamond's Guns, Germs and Steel as one of his main inspirations, showing that you can \"ask very big questions and answer them scientifically.\"",
+                        new File("library/Sapiens__A_Brief_History_of_Humankind.txt")
                 ),
                 true);
         library.put(
@@ -48,14 +49,17 @@ public class Main {
                         1960,
                         "They called him Christ. But he was not the Man who had toiled up the long road to Golgotha five thousand years before. They called him Buddha and Mohammed; they called him the Lamb, and the Blessed of God. The called him the Prince of Peace and the Immortal One.\n" +
                                 "" +
-                                "His name was Tyrell.\n"),
+                                "His name was Tyrell.\n",
+                        new File("library/A_Cross_of_Centuries.txt")
+                ),
                 true);
         library.put(
                 new Book(
                         "Harry Potter and the Prisoner of Azkaban",
                         "Joanne Kathleen",
                         1999,
-                        "Harry Potter and the Prisoner of Azkaban is a fantasy novel written by British author J. K. Rowling and is the third in the Harry Potter series. The book follows Harry Potter, a young wizard, in his third year at Hogwarts School of Witchcraft and Wizardry. Along with friends Ronald Weasley and Hermione Granger, Harry investigates Sirius Black, an escaped prisoner from Azkaban, the wizard prison, believed to be one of Lord Voldemort's old allies.\n"
+                        "Harry Potter and the Prisoner of Azkaban is a fantasy novel written by British author J. K. Rowling and is the third in the Harry Potter series. The book follows Harry Potter, a young wizard, in his third year at Hogwarts School of Witchcraft and Wizardry. Along with friends Ronald Weasley and Hermione Granger, Harry investigates Sirius Black, an escaped prisoner from Azkaban, the wizard prison, believed to be one of Lord Voldemort's old allies.\n",
+                        new File("library/Harry_Potter_and_the_Prisoner_of_Azkaban.txt")
                 ),
                 true);
         library.put(
@@ -66,14 +70,16 @@ public class Main {
                         "I think it is strange how the scenes surrounding big events stay in your\n" +
                                 "memory. And sometimes with years they become more clear than the\n" +
                                 "happening which impressed them. I know this, because I remember a big\n" +
-                                "four-posted bed, and a lot of people around it--crying.\n"
+                                "four-posted bed, and a lot of people around it--crying.\n",
+                        new File("library/Natalie-Page-Katharine-Havil.txt")
                         ), true);
         library.put(
                 new Book(
                         "Nightshade and Damnations",
                         "Gerald Kersh",
                         2013,
-                        "Nightmares, phantasmagoria, horrors that lurk in the streets of today, the corrupting weaknesses of men; these are the bones and gristle of what this book contains.\n"
+                        "Nightmares, phantasmagoria, horrors that lurk in the streets of today, the corrupting weaknesses of men; these are the bones and gristle of what this book contains.\n",
+                        new File("library/Nightshade_and_Damnations.txt")
                 ), true
         );
         library.put(
@@ -92,7 +98,8 @@ public class Main {
                         "The Man Who Fell to Earth",
                         "Tevis Wolter",
                         2014,
-                        "T. J. Newton is an extraterrestrial who goes to Earth on a desperate mission of mercy. But instead of aid, Newton discovers loneliness and despair that ultimately ends in tragedy.\n"
+                        "T. J. Newton is an extraterrestrial who goes to Earth on a desperate mission of mercy. But instead of aid, Newton discovers loneliness and despair that ultimately ends in tragedy.\n",
+                        new File("library/The_Man_Who_Fell_to_Earth.txt")
                 ), true
         );
         library.put(
@@ -100,7 +107,8 @@ public class Main {
                         "The Queen's Gambit",
                         "Tevis Wolter",
                         2014,
-                        "Beth Harmon becomes an orphan when her parents are killed in an automobile accident. At eight years old, she is placed in an orphanage in Mount Sterling, Kentucky, where the children are given a tranquilliser twice a day. Plain and shy, she learns to play chess from the janitor in the basement and discovers that she is a chess genius. She is adopted by Alma and Allston Wheatley and goes to a local school, but remains an outsider. Desperate to study chess and having no money, she steals a chess magazine from a newspaper store and then some money from Alma Wheatley and a girl at school, so that she can enter a tournament. She also steals some of the tranquillisers to which she is becoming addicted. At thirteen she wins the tournament, and by sixteen she is competing in the US Open Championship. Like Fast Eddie (in The Hustler), she hates to lose.\n"
+                        "Beth Harmon becomes an orphan when her parents are killed in an automobile accident. At eight years old, she is placed in an orphanage in Mount Sterling, Kentucky, where the children are given a tranquilliser twice a day. Plain and shy, she learns to play chess from the janitor in the basement and discovers that she is a chess genius. She is adopted by Alma and Allston Wheatley and goes to a local school, but remains an outsider. Desperate to study chess and having no money, she steals a chess magazine from a newspaper store and then some money from Alma Wheatley and a girl at school, so that she can enter a tournament. She also steals some of the tranquillisers to which she is becoming addicted. At thirteen she wins the tournament, and by sixteen she is competing in the US Open Championship. Like Fast Eddie (in The Hustler), she hates to lose.\n",
+                        new File("library/The_Queen_s_Gambit.txt")
                 ), true
         );
         library.put(
@@ -109,7 +117,8 @@ public class Main {
                         "Tevis Wolter",
                         1990,
                         "It is the year 2063. China's world dominance is growing, and America is slipping into impotence. All new sources of energy have been depleted or declared unsafe, and a new Ice Age has begun. Ben Belson searches for a new energy resource.\n" +
-                                "\n"
+                                "\n",
+                        new File("library/The_Steps_of_the_Sun.txt")
                         ), true
         );
         library.put(
@@ -117,7 +126,9 @@ public class Main {
                         "Orphans of the Helix",
                         "Dan Simmons",
                         1980,
-                        "The great spinship translated down from Hawking space into the red-and-white double light of a close binary. While the 684,300 people of the Amoiete Spectrum Helix dreamt on in deep cryogenic sleep, the five AIs in charge of the ship conferred. They had encountered an unusual phenomenon and while four of the five had agreed it important enough to bring the huge spinship out of C-plus Hawking space, there was a lively debate—continuing for several microseconds—about what to do next.\n"), true
+                        "The great spinship translated down from Hawking space into the red-and-white double light of a close binary. While the 684,300 people of the Amoiete Spectrum Helix dreamt on in deep cryogenic sleep, the five AIs in charge of the ship conferred. They had encountered an unusual phenomenon and while four of the five had agreed it important enough to bring the huge spinship out of C-plus Hawking space, there was a lively debate—continuing for several microseconds—about what to do next.\n",
+                        new File("library/Orphans_of_the_Helix.txt")
+                ), true
         );
     }
 
