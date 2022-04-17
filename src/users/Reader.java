@@ -4,6 +4,7 @@ import books.Book;
 import books.LibraryCard;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Reader extends User{
 
@@ -11,6 +12,7 @@ public class Reader extends User{
     private String name;
     private LibraryCard card = new LibraryCard(this);
     private ArrayList<Book> booksOnHand;
+    private HashMap<Book, Integer> bookmarks= new HashMap<>();
 
     public Reader(String login, String password) {
         super(login, password);
@@ -27,6 +29,7 @@ public class Reader extends User{
         book.addReader(this);
         card.addBook(book);
         booksOnHand.add(book);
+        bookmarks.put(book, 1);
     }
 
      public void returnBook(Book book) {
@@ -37,7 +40,6 @@ public class Reader extends User{
 
     public boolean check(String login, String password) {
         return this.login.equals(login) && this.password.equals(this.password);
-
     }
 
     public String getNumber() {

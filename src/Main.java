@@ -3,6 +3,7 @@ import users.Admin;
 import users.Reader;
 import users.User;
 
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Main {
@@ -383,7 +384,11 @@ public class Main {
             System.out.println("Invalid index");
             return;
         }
-        books.get(position - 1).read();
+        try {
+            books.get(position - 1).read();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void showBooksOnHand() {
