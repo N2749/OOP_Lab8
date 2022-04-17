@@ -42,116 +42,80 @@ public class Main {
                 true);
         library.put(
                 new Book(
-                        "The God Delusion",
-                        "Richard Dawkins",
-                        2006,
-                        "In The God Delusion, Dawkins contends that a supernatural creator, God, almost certainly does not exist, and that belief in a personal god qualifies as a delusion, which he defines as a persistent false belief held in the face of strong contradictory evidence. He is sympathetic to Robert Pirsig's statement in Lila (1991) that \"when one person suffers from a delusion it is called insanity. When many people suffer from a delusion it is called religion.\"[3] With many examples, he explains that one does not need religion to be moral and that the roots of religion and of morality can be explained in non-religious terms.\n"
-
-                ),
-                true);
-        library.put(
-                new Book(
-                        "The Selfish Gene",
-                        "Richard Dawkins",
-                        1976,
-                        "The Selfish Gene is a 1976 book on evolution by the ethologist Richard Dawkins, in which the author builds upon the principal theory of George C. Williams's Adaptation and Natural Selection (1966). Dawkins uses the term \"selfish gene\" as a way of expressing the gene-centred view of evolution (as opposed to the views focused on the organism and the group), popularising ideas developed during the 1960s by W. D. Hamilton and others. From the gene-centred view, it follows that the more two individuals are genetically related, the more sense (at the level of the genes) it makes for them to behave cooperatively with each other." +
-                                "\n"
-                ),
-                true);
-        library.put(
-                new Book(
-                        "To Kill a Mockingbird",
-                        "Harper Lee",
+                        "A Cross of Centuries",
+                        "Henry Kuttner",
                         1960,
-                        "To Kill a Mockingbird takes place in the fictional town of Maycomb, Alabama, during the Great Depression. The protagonist is Jean Louise (“Scout”) Finch, an intelligent though unconventional girl who ages from six to nine years old during the course of the novel. She is raised with her brother, Jeremy Atticus (“Jem”), by their widowed father, Atticus Finch. He is a prominent lawyer who encourages his children to be empathetic and just. He notably tells them that it is “a sin to kill a mockingbird,” alluding to the fact that the birds are innocent and harmless.\n"
-                ), true);
+                        "They called him Christ. But he was not the Man who had toiled up the long road to Golgotha five thousand years before. They called him Buddha and Mohammed; they called him the Lamb, and the Blessed of God. The called him the Prince of Peace and the Immortal One.\n" +
+                                "" +
+                                "His name was Tyrell.\n"),
+                true);
         library.put(
                 new Book(
-                        "The Great Gatsby",
-                        "F. Scott Fitzgerald",
-                        1925,
-                        "The book is narrated by Nick Carraway, a Yale University graduate from the Midwest who moves to New York after World War I to pursue a career in bonds. He recounts the events of the summer he spent in the East two years later, reconstructing his story through a series of flashbacks not always told in chronological order. In the spring of 1922, Nick takes a house in the fictional village of West Egg on Long Island, where he finds himself living among the colossal mansions of the newly rich. Across the water in the more refined village of East Egg live his cousin Daisy and her brutish, absurdly wealthy husband Tom Buchanan.\n"
+                        "Harry Potter and the Prisoner of Azkaban",
+                        "Joanne Kathleen",
+                        1999,
+                        "Harry Potter and the Prisoner of Azkaban is a fantasy novel written by British author J. K. Rowling and is the third in the Harry Potter series. The book follows Harry Potter, a young wizard, in his third year at Hogwarts School of Witchcraft and Wizardry. Along with friends Ronald Weasley and Hermione Granger, Harry investigates Sirius Black, an escaped prisoner from Azkaban, the wizard prison, believed to be one of Lord Voldemort's old allies.\n"
+                ),
+                true);
+        library.put(
+                new Book(
+                        "Natalie Page",
+                        "Katharine Haviland-Taylor",
+                        1921,
+                        "I think it is strange how the scenes surrounding big events stay in your\n" +
+                                "memory. And sometimes with years they become more clear than the\n" +
+                                "happening which impressed them. I know this, because I remember a big\n" +
+                                "four-posted bed, and a lot of people around it--crying.\n"
+                        ), true);
+        library.put(
+                new Book(
+                        "Nightshade and Damnations",
+                        "Gerald Kersh",
+                        2013,
+                        "Nightmares, phantasmagoria, horrors that lurk in the streets of today, the corrupting weaknesses of men; these are the bones and gristle of what this book contains.\n"
                 ), true
         );
         library.put(
                 new Book(
-                        "One Hundred Years of Solitude",
-                        "Gabriel García Márquez",
-                        1967,
-                        "This is the author's epic tale of seven generations of the Buendía family that also spans a hundred years of turbulent Latin American history, from the postcolonial 1820s to the 1920s. Patriarch José Arcadio Buendía builds the utopian city of Macondo in the middle of a swamp.\n"
+                        "The Hustler",
+                        "Tevis Wolter",
+                        2011,
+                        "The Hustler is about the victories and losses of one \"Fast\" Eddie Felson, a poolroom hustler who travels from town to town conning strangers into thinking they could beat him at the game when in fact, he is a skillful player who has never lost a game. Until he meets his match in Minnesota Fats, the true king of the poolroom, causing his life to change drastically.\n" +
+                                "\n" +
+                                "This is a classic tale of a man's struggle with his soul and his self-esteem.\n"
                 ), true
         );
         library.put(
                 new Book(
-                        "A Passage to India",
-                        "E.M. Forster.",
-                        1924,
-                        "The book was published in 1924 and follows a Muslim Indian doctor named Aziz and his relationships with an English professor, Cyril Fielding, and a visiting English schoolteacher named Adela Quested. When Adela believes that Aziz has assaulted her while on a trip to the Marabar caves near the fictional city of Chandrapore, where the story is set, tensions between the Indian community and the colonial British community rise. The possibility of friendship and connection between English and Indian people, despite their cultural differences and imperial tensions, is explored in the conflict. The novel’s colorful descriptions of nature, the landscape of India, and the figurative power that they are given within the text solidifies it as a great work of fiction.\n"
+                        "The Man Who Fell to Earth",
+                        "Tevis Wolter",
+                        2014,
+                        "T. J. Newton is an extraterrestrial who goes to Earth on a desperate mission of mercy. But instead of aid, Newton discovers loneliness and despair that ultimately ends in tragedy.\n"
                 ), true
         );
         library.put(
                 new Book(
-                        "Invisible Man",
-                        "Ralph Ellison",
-                        1952,
-                        "Often confused with H.G. Wells’s science-fiction novella of nearly the same name (just subtract a “The”), Ralph Ellison’s Invisible Man is a groundbreaking novel in the expression of identity for the African American male. The narrator of the novel, a man who is never named but believes he is “invisible” to others socially, tells the story of his move from the South to college and then to New York City. In each location he faces extreme adversity and discrimination, falling into and out of work, relationships, and questionable social movements in a wayward and ethereal mindset. The novel is renowned for its surreal and experimental style of writing that explores the symbolism surrounding African American identity and culture. Invisible Man won the U.S. National Book Award for Fiction in 1953.\n"
+                        "The Queen's Gambit",
+                        "Tevis Wolter",
+                        2014,
+                        "Beth Harmon becomes an orphan when her parents are killed in an automobile accident. At eight years old, she is placed in an orphanage in Mount Sterling, Kentucky, where the children are given a tranquilliser twice a day. Plain and shy, she learns to play chess from the janitor in the basement and discovers that she is a chess genius. She is adopted by Alma and Allston Wheatley and goes to a local school, but remains an outsider. Desperate to study chess and having no money, she steals a chess magazine from a newspaper store and then some money from Alma Wheatley and a girl at school, so that she can enter a tournament. She also steals some of the tranquillisers to which she is becoming addicted. At thirteen she wins the tournament, and by sixteen she is competing in the US Open Championship. Like Fast Eddie (in The Hustler), she hates to lose.\n"
                 ), true
         );
         library.put(
                 new Book(
-                        "Don Quixote",
-                        "Miguel de Cervantes",
-                        1615,
-                        "Miguel de Cervantes’s Don Quixote, perhaps the most influential and well-known work of Spanish literature, was first published in full in 1615. The novel, which is very regularly regarded as one of the best literary works of all time, tells the story of a man who takes the name “Don Quixote de la Mancha” and sets off in a fit of obsession over romantic novels about chivalry to revive the custom and become a hero himself. The character of Don Quixote has become an idol and somewhat of an archetypal character, influencing many major works of art, music, and literature since the novel’s publication. The text has been so influential that a word, quixotic, based on the Don Quixote character, was created to describe someone who is, “foolishly impractical especially in the pursuit of ideals;\n"
-                ), true
+                        "The Steps of the Sun",
+                        "Tevis Wolter",
+                        1990,
+                        "It is the year 2063. China's world dominance is growing, and America is slipping into impotence. All new sources of energy have been depleted or declared unsafe, and a new Ice Age has begun. Ben Belson searches for a new energy resource.\n" +
+                                "\n"
+                        ), true
         );
         library.put(
                 new Book(
-                        "Beloved",
-                        "Toni Morrison",
+                        "Orphans of the Helix",
+                        "Dan Simmons",
                         1980,
-                        "Toni Morrison’s 1987 spiritual and haunting novel Beloved tells the story of an escaped slave named Sethe who has fled to Cincinnati, Ohio, in the year 1873. The novel investigates the trauma of slavery even after freedom has been gained, depicting Sethe’s guilt and emotional pain after having killed her own child, whom she named Beloved, to keep her from living life as a slave. A spectral figure appears in the lives of the characters and goes by the same name as the child, embodying the family’s anguish and hardship and making their feelings and past unavoidable.\n"
-                ), true
-        );
-        library.put(
-                new Book(
-                        "Mrs. Dalloway",
-                        "Virginia Woolf",
-                        1925,
-                        "Possibly the most idiosyncratic novel of this list, Virginia Woolf’s Mrs. Dalloway describes exactly one day in the life of a British socialite named Clarissa Dalloway. Using a combination of a third-person narration and the thoughts of various characters, the novel uses a stream-of-consciousness style all the way through. The result of this style is a deeply personal and revealing look into the characters’ minds, with the novel relying heavily on character rather than plot to tell its story.\n"
-                ), true
-        );
-        library.put(
-                new Book(
-                        "Things Fall Apart",
-                        "Chinua Achebe",
-                        1958,
-                        "The Western canon of “great literature” often focuses on writers who come from North America or Europe and often ignores accomplished writers and amazing works of literature from other parts of the world. Chinua Achebe’s Things Fall Apart, published in 1958, is one such work of African literature that had to overcome the bias of some literary circles and one that has been able to gain recognition worldwide despite it. The novel follows an Igbo man named Okonkwo, describing his family, the village in Nigeria where he lives, and the effects of British colonialism on his native country.\n"
-                ), true
-        );
-        library.put(
-                new Book(
-                        "Jane Eyre",
-                        "Charlotte Brontë",
-                        1847,
-                        "Charlotte Brontë’s Jane Eyre, another novel often assigned for reading in school, was initially published in 1847 under the pseudonym Currer Bell to disguise the fact that the writer was a woman. Fortunately, a lot has changed with regard to women in literature since 1847, and Brontë now receives the credit she deserves for one of the most-groundbreaking novels about women in history. At a time when the author felt compelled to hide her true identity, Jane Eyre provided a story of individualism for women. \n"
-                ), true
-        );
-        library.put(
-                new Book(
-                        "The Color Purple",
-                        "Alice Walker",
-                        1982,
-                        "Though the epistolary novel (a novel in the form of letters written by one or more characters) was most popular before the 19th century, Alice Walker became a champion of the style with her 1982 Pulitzer Prize- and National Book Award-winning novel The Color Purple. Set in the post-Civil War American South, the novel follows a young African American girl named Celie into adulthood in letters she writes to God and to her sister Nettie. Celie faces sexual abuse by her father and eventually her husband, chronicling her own suffering and growth as well as that of her friends and family."
-                ), true
-        );
-        library.put(
-                new Book(
-                        "Anna Karenina",
-                        " Leo Tolstoy",
-                        1878,
-                        "Any fan of stories that involve juicy subjects like adultery, gambling, marriage plots, and, well, Russian feudalism, would instantly place Anna Karenina at the peak of their “greatest novels” list. And that’s exactly the ranking that publications like Time magazine have given the novel since it was published in its entirety in 1878. Written by Russian novelist Leo Tolstoy, the eight-part towering work of fiction tells the story of two major characters: a tragic, disenchanted housewife, the titular Anna, who runs off with her young lover, and a lovestruck landowner named Konstantin Levin, who struggles in faith and philosophy."
-                ), true
+                        "The great spinship translated down from Hawking space into the red-and-white double light of a close binary. While the 684,300 people of the Amoiete Spectrum Helix dreamt on in deep cryogenic sleep, the five AIs in charge of the ship conferred. They had encountered an unusual phenomenon and while four of the five had agreed it important enough to bring the huge spinship out of C-plus Hawking space, there was a lively debate—continuing for several microseconds—about what to do next.\n"), true
         );
     }
 
