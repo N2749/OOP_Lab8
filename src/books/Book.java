@@ -86,6 +86,9 @@ public class Book implements Showable {
         Scanner sScanner = new Scanner(System.in);
         String choice, temp, page = "";
         do {
+            if(currentPage < 1) {
+                currentPage = 1;
+            }
             for (int i = 0; i < 5; i++) {
                 page += scanner.nextLine() + "\n";
                 temp = scanner.nextLine();
